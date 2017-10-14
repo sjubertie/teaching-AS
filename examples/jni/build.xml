@@ -1,0 +1,28 @@
+<project name="test_jni" default="all">
+
+  <target name="all" depends="dist">
+  </target>
+
+  <target name="compile">
+    <mkdir dir="bin/classes"/>
+    <javac srcdir="src" destdir="bin/classes" includeantruntime="false"/>
+  </target>
+
+  <target name="dist" depends="compile">
+    <jar jarfile="bin/Main.jar" basedir="bin/classes">
+      <manifest>
+	<attribute name="Main-Class" value="Main"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="dist">
+    <java jar="bin/Main.jar"  fork="true"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="bin"/>
+    <delete dir="doc"/>
+  </target>
+
+</project>

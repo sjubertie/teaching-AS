@@ -1,0 +1,8 @@
+Building:
+1) Build the library in the jni directory using `make`.
+2) Build the main Java program using `ant`.
+
+Running:
+1) Add the lib directory to your LD_LIBRARY_PATH:
+   `export LD_LIBRARY_PATH+=:$PWD/lib`
+2) Execute `ant run` or `java -jar bin/Main.jar`
