@@ -6,9 +6,6 @@ OBJSPIC=$(SRCS:src/%.c=obj/%.pic.o) # Same as above but to produce the shared li
 
 CFLAGS=-I include										# Compilation flags, only required to produce object files.
 
-# .PHONY contains the list of targets which are not files.
-.PHONY: all clean
-
 # Main rule: create libtest libraries in lib/.
 all: lib/libtest.a lib/libtest.so
 
@@ -32,3 +29,5 @@ obj/%.pic.o: src/%.c include/%.h
 clean:
 	rm -f lib/* obj/*
 
+# .PHONY contains the list of targets which are not files.
+.PHONY: all clean
